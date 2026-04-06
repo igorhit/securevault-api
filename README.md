@@ -1,5 +1,7 @@
 # SecureVault API
 
+![CI](https://github.com/igorhit/securevault-api/actions/workflows/ci.yml/badge.svg)
+
 API REST para gerenciamento seguro de credenciais pessoais, construída com .NET 8, Clean Architecture e SQLite.
 
 O foco deste projeto é demonstrar backend com segurança aplicada de forma visível:
@@ -146,5 +148,3 @@ SecureVaultApi/
 ## CI
 
 O workflow de CI está em [.github/workflows/ci.yml](.github/workflows/ci.yml) e executa build + testes automatizados.
-
-O badge será atualizado com a URL real do repositório assim que o projeto for publicado no GitHub.

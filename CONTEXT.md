@@ -23,9 +23,9 @@ Projetos GitHub que funcionam com `git clone + um comando`, sem nenhuma configur
 **Testes de integração:** 10/10 passando  
 **API rodando:** confirmado em 2026-04-06 com `dotnet run`  
 **Health check:** `GET /health` → `200 Healthy`  
-**Swagger:** disponível na raiz `http://localhost:5000/`
-**Teste manual no Swagger:** validado em 2026-04-06 (auth + vault)
-**Docker Compose:** arquivos criados e `docker compose config` validado; `docker compose up` ainda não executado nesta sessão porque o daemon Docker local estava desligado
+**Swagger:** disponível na raiz `http://localhost:5000`  
+**Teste manual no Swagger:** validado em 2026-04-06 (auth + vault)  
+**Docker Compose:** validado em 2026-04-06 com `docker compose up --build`; health check `200` e Swagger carregando via container  
 **Git local:** repositório inicializado em `main` com commit inicial criado
 
 ### Último problema investigado
@@ -42,7 +42,7 @@ Pendências validadas e corrigidas nesta sessão:
 10. `.gitignore` passou a ignorar arquivos SQLite locais (`*.db`, `*.db-shm`, `*.db-wal`) para evitar commit acidental do banco
 11. Repositório Git local foi inicializado com commit inicial semântico
 
-**Próxima ação:** publicar no GitHub, validar `docker compose up` com o daemon ativo e atualizar badge do CI com a URL real do repositório
+**Próxima ação:** publicar no GitHub e validar o workflow do CI no repositório remoto
 
 ---
 
@@ -161,9 +161,9 @@ GET    /health
 - [x] Inicializar repositório Git (`git init && git add . && git commit`)
 - [x] Criar `docker-compose.yml`
 - [x] Criar `.env.example`
-- [ ] Validar `docker compose up` com Docker daemon ativo
+- [x] Validar `docker compose up` com Docker daemon ativo
 - [ ] Criar repositório no GitHub e fazer push
-- [ ] Atualizar badge de CI no README com URL real do repositório
+- [x] Atualizar badge de CI no README com URL real do repositório
 
 ---
 
