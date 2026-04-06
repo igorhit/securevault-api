@@ -25,6 +25,8 @@ Projetos GitHub que funcionam com `git clone + um comando`, sem nenhuma configur
 **Health check:** `GET /health` → `200 Healthy`  
 **Swagger:** disponível na raiz `http://localhost:5000/`
 **Teste manual no Swagger:** validado em 2026-04-06 (auth + vault)
+**Docker Compose:** arquivos criados e `docker compose config` validado; `docker compose up` ainda não executado nesta sessão porque o daemon Docker local estava desligado
+**Git local:** repositório inicializado em `main` com commit inicial criado
 
 ### Último problema investigado
 Pendências validadas e corrigidas nesta sessão:
@@ -36,8 +38,11 @@ Pendências validadas e corrigidas nesta sessão:
 6. `ValidationBehavior` retornava `Result.Fail(...)` não tipado para `Result<T>` → corrigido para usar o overload genérico correto
 7. Rate limiting interferia na suíte de integração → desabilitado no ambiente de testes
 8. Swagger podia abrir em branco no navegador por causa do header `Content-Security-Policy: default-src 'self'` aplicado à UI → CSP relaxada apenas para `/` e `/index.html`
+9. Projeto foi alinhado ao requisito de portfólio com `Dockerfile`, `docker-compose.yml`, `.env.example` e documentação atualizada
+10. `.gitignore` passou a ignorar arquivos SQLite locais (`*.db`, `*.db-shm`, `*.db-wal`) para evitar commit acidental do banco
+11. Repositório Git local foi inicializado com commit inicial semântico
 
-**Próxima ação:** inicializar Git, publicar no GitHub e atualizar badge do CI
+**Próxima ação:** publicar no GitHub, validar `docker compose up` com o daemon ativo e atualizar badge do CI com a URL real do repositório
 
 ---
 
@@ -153,7 +158,10 @@ GET    /health
 - [x] Confirmar que `dotnet run` sobe sem erros
 - [x] Confirmar que testes de integração passam (`dotnet test`)
 - [x] Testar fluxo completo no Swagger manualmente
-- [ ] Inicializar repositório Git (`git init && git add . && git commit`)
+- [x] Inicializar repositório Git (`git init && git add . && git commit`)
+- [x] Criar `docker-compose.yml`
+- [x] Criar `.env.example`
+- [ ] Validar `docker compose up` com Docker daemon ativo
 - [ ] Criar repositório no GitHub e fazer push
 - [ ] Atualizar badge de CI no README com URL real do repositório
 
