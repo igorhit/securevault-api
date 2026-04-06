@@ -44,6 +44,7 @@ Pendências validadas e corrigidas nesta sessão:
 10. `.gitignore` passou a ignorar arquivos SQLite locais (`*.db`, `*.db-shm`, `*.db-wal`) para evitar commit acidental do banco
 11. Repositório Git local foi inicializado com commit inicial semântico
 12. Seed demo idempotente foi adicionado ao startup via configuração para permitir login e validação imediata no ambiente Docker
+13. README foi polido para melhorar a leitura inicial no GitHub (badges, highlights, fluxo demo e comandos de reset)
 
 **Próxima ação:** validar o workflow do CI no repositório remoto
 
