@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SecureVault.API/SecureVault.API.csproj" />
+    <Project Path="src/SecureVault.Application/SecureVault.Application.csproj" />
+    <Project Path="src/SecureVault.Domain/SecureVault.Domain.csproj" />
+    <Project Path="src/SecureVault.Infrastructure/SecureVault.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SecureVault.IntegrationTests/SecureVault.IntegrationTests.csproj" />
+    <Project Path="tests/SecureVault.UnitTests/SecureVault.UnitTests.csproj" />
+  </Folder>
+</Solution>

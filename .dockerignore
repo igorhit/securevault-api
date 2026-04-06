@@ -1,0 +1,10 @@
+.git
+.github
+.vscode
+.idea
+**/bin
+**/obj
+**/.env
+**/*.db
+README.md
+CONTEXT.md
