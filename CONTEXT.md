@@ -26,6 +26,8 @@ Projetos GitHub que funcionam com `git clone + um comando`, sem nenhuma configur
 **Swagger:** disponível na raiz `http://localhost:5000`  
 **Teste manual no Swagger:** validado em 2026-04-06 (auth + vault)  
 **Docker Compose:** validado em 2026-04-06 com `docker compose up --build`; health check `200` e Swagger carregando via container  
+**Seed demo:** usuário e credenciais de demonstração criados automaticamente no ambiente Docker  
+**GitHub:** repositório publicado em `https://github.com/igorhit/securevault-api`  
 **Git local:** repositório inicializado em `main` com commit inicial criado
 
 ### Último problema investigado
@@ -41,8 +43,9 @@ Pendências validadas e corrigidas nesta sessão:
 9. Projeto foi alinhado ao requisito de portfólio com `Dockerfile`, `docker-compose.yml`, `.env.example` e documentação atualizada
 10. `.gitignore` passou a ignorar arquivos SQLite locais (`*.db`, `*.db-shm`, `*.db-wal`) para evitar commit acidental do banco
 11. Repositório Git local foi inicializado com commit inicial semântico
+12. Seed demo idempotente foi adicionado ao startup via configuração para permitir login e validação imediata no ambiente Docker
 
-**Próxima ação:** publicar no GitHub e validar o workflow do CI no repositório remoto
+**Próxima ação:** validar o workflow do CI no repositório remoto
 
 ---
 
@@ -162,7 +165,7 @@ GET    /health
 - [x] Criar `docker-compose.yml`
 - [x] Criar `.env.example`
 - [x] Validar `docker compose up` com Docker daemon ativo
-- [ ] Criar repositório no GitHub e fazer push
+- [x] Criar repositório no GitHub e fazer push
 - [x] Atualizar badge de CI no README com URL real do repositório
 
 ---

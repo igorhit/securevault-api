@@ -111,6 +111,24 @@ O volume armazena:
 
 Isso evita perda de dados e troca involuntária de segredos a cada restart do container.
 
+## Seed de dados demo
+
+Para reduzir atrito na avaliação, o ambiente Docker ativa um seed idempotente no startup.
+
+Esse seed:
+
+- cria um usuário demo
+- cria credenciais de exemplo
+- não duplica dados se o volume já tiver sido inicializado
+
+O seed é controlado por configuração:
+
+- `DemoData:Enabled`
+- `DemoData:UserEmail`
+- `DemoData:UserPassword`
+
+No fluxo local com `dotnet run`, ele permanece desligado por padrão. No `docker-compose.yml`, ele é ativado para que o recrutador consiga validar login e listagem imediatamente.
+
 ## Bootstrap de ambiente
 
 No startup:

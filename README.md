@@ -31,7 +31,7 @@ Detalhes de segurança: [docs/security-decisions.md](docs/security-decisions.md)
 Pré-requisito: Docker Desktop
 
 ```bash
-git clone <repo>
+git clone https://github.com/igorhit/securevault-api.git
 cd securevault-api
 docker compose up --build
 ```
@@ -45,6 +45,7 @@ Observações:
 - o banco SQLite fica persistido em um volume Docker
 - o `.env` interno da aplicação é gerado automaticamente na primeira execução dentro do volume persistente
 - não existe serviço separado de banco porque o projeto usa SQLite embutido
+- dados demo são criados automaticamente no primeiro startup do ambiente Docker
 
 ### Opção local: .NET SDK
 
@@ -54,6 +55,33 @@ Pré-requisito: .NET 8 SDK
 cd src/SecureVault.API
 dotnet run
 ```
+
+No modo local via `dotnet run`, o seed demo não é ativado por padrão.
+
+## Como validar rapidamente no Swagger
+
+No fluxo via Docker Compose, a aplicação já sobe com um usuário demo e credenciais de exemplo.
+
+### Login demo
+
+```text
+email: demo@securevault.local
+password: Demo@123456
+```
+
+### Fluxo recomendado para recrutador
+
+1. Abrir `http://localhost:5000`
+2. Executar `POST /auth/login` com o usuário demo
+3. Copiar o `accessToken`
+4. Clicar em `Authorize` e colar `Bearer <accessToken>`
+5. Executar `GET /vault` para ver as credenciais seedadas
+6. Testar `GET /vault/search`, `PUT /vault/{id}` e `DELETE /vault/{id}`
+
+### Credenciais seedadas
+
+- `GitHub Demo`
+- `Azure Portal Demo`
 
 ## Como executar os testes
 
@@ -76,6 +104,9 @@ Hoje elas são:
 
 - `APP_PORT`: porta publicada localmente pelo container
 - `ASPNETCORE_ENVIRONMENT`: ambiente ASP.NET usado no container
+- `DEMO_DATA_ENABLED`: liga/desliga o seed de demonstração no Compose
+- `DEMO_USER_EMAIL`: e-mail do usuário demo
+- `DEMO_USER_PASSWORD`: senha do usuário demo
 
 Observação importante:
 - o arquivo `src/SecureVault.API/.env` não deve ser criado manualmente para o fluxo normal do projeto; ele é gerado automaticamente pela aplicação com segredos locais
@@ -135,6 +166,7 @@ SecureVaultApi/
 - Secrets locais gerados automaticamente via bootstrap de `.env`
 - Testes de integração com SQLite temporário em arquivo, sem dependências externas
 - Volume Docker para persistir banco e secrets locais da aplicação
+- Seed demo idempotente no startup do ambiente Docker para reduzir atrito na avaliação
 
 ## Segurança visível
 
