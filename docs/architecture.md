@@ -4,6 +4,8 @@
 
 O projeto foi estruturado para demonstrar um backend realista, mas com fricção operacional mínima para quem avalia o portfólio. A prioridade foi equilibrar:
 
+> Problemas encontrados durante a implementação e como foram resolvidos estão documentados em [implementation-notes.md](implementation-notes.md).
+
 - segurança visível
 - separação clara de responsabilidades
 - execução local simples

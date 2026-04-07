@@ -28,7 +28,8 @@ Projetos GitHub que funcionam com `git clone + um comando`, sem nenhuma configur
 **Docker Compose:** validado em 2026-04-06 com `docker compose up --build`; health check `200` e Swagger carregando via container  
 **Seed demo:** usuário e credenciais de demonstração criados automaticamente no ambiente Docker  
 **GitHub:** repositório publicado em `https://github.com/igorhit/securevault-api`  
-**Git local:** repositório inicializado em `main` com commit inicial criado
+**Git local:** repositório inicializado em `main` com commit inicial criado  
+**CI remoto:** workflow validado no GitHub Actions (badge verde)
 
 ### Último problema investigado
 Pendências validadas e corrigidas nesta sessão:
@@ -46,7 +47,7 @@ Pendências validadas e corrigidas nesta sessão:
 12. Seed demo idempotente foi adicionado ao startup via configuração para permitir login e validação imediata no ambiente Docker
 13. README foi polido para melhorar a leitura inicial no GitHub (badges, highlights, fluxo demo e comandos de reset)
 
-**Próxima ação:** validar o workflow do CI no repositório remoto
+**Próxima ação:** nenhuma obrigatória no Projeto 1; manter congelado e só revisitar se aparecer bug real ou feedback externo
 
 ---
 
@@ -103,6 +104,19 @@ SecureVaultApi/
 | `src/SecureVault.API/appsettings.Development.json` | Apenas override Serilog (sem connection string — foi removida) |
 | `src/SecureVault.API/Properties/launchSettings.json` | Porta 5000, launchBrowser: false |
 | `src/SecureVault.Infrastructure/Persistence/Migrations/` | Migration SQLite gerada |
+
+---
+
+## Regra de documentação de problemas
+
+Todo problema não-trivial encontrado durante o desenvolvimento deve ser registrado em `docs/implementation-notes.md` com o formato:
+
+- **Nome do problema** — título curto e descritivo
+- **O que causava** — causa raiz técnica, não apenas o sintoma
+- **Como foi solucionado** — solução aplicada, com trecho de código se relevante
+- **Por que essa solução** — motivação da decisão
+
+Este arquivo já existe e contém os problemas resolvidos até agora. Novos problemas devem ser adicionados ao longo do desenvolvimento.
 
 ---
 
@@ -177,8 +191,8 @@ Este é o **Projeto 1 de 3**:
 
 | # | Projeto | Stack | Status |
 |---|---|---|---|
-| 1 | SecureVault API | .NET 8 + SQLite | Em desenvolvimento |
-| 2 | Aplicação fullstack | .NET + Next.js + SQLite | Planejado |
+| 1 | SecureVault API | .NET 8 + SQLite | Concluído e publicado |
+| 2 | Aplicação fullstack | .NET + Next.js + SQLite | Scaffold iniciado |
 | 3 | Ferramenta de segurança | Python | Aguardando evolução em cibersec |
 
 Todos os projetos vivem em `C:\Users\User\Desktop\Coding\Projects\` e seguem os mesmos requisitos de portfólio definidos em `C:\Users\User\Desktop\Coding\Projects\CLAUDE.md`.
