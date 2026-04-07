@@ -1,6 +1,7 @@
 # Secrets — NUNCA comitar
 .env
 *.env
+/CLAUDE.md
 
 # SQLite local
 *.db

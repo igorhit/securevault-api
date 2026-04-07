@@ -2,6 +2,8 @@
 
 > **Instrução para agentes IA:** Leia este arquivo no início de toda sessão. Ao final de toda sessão ou ao fazer mudanças significativas, atualize as seções relevantes antes de encerrar.
 
+> **Atalho do repositório:** veja também `AGENTS.md` na raiz para o fluxo curto de entrada do projeto.
+
 ---
 
 ## Desenvolvedor
